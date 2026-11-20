@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RegulaT - Panel del Orientador</title>
+  <link rel="stylesheet" href="estilos_index.css">
+  <link rel="stylesheet" href="estilos_director.css">
+</head>
+<body>
+
+  <nav class="topbar-3d">
+    <div class="brand-logo">
+      <span class="brand-text">RegulaT - Módulo de Orientación Escolar</span>
+    </div>
+    <div class="user-pill-3d">
+      <span id="nombreOrientadorHeader">Orientador</span>
+      <button onclick="cerrarSesionOrientador()" class="btn-3d btn-sm btn-red">Cerrar Sesión</button>
+    </div>
+  </nav>
+
+  <main class="dashboard-container" style="padding: 2rem;">
+    <section class="panel-card-3d">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div>
+          <h2>Orientador de Grado</h2>
+          <p>Monitoreo general de alumnos e indicadores de desempeño para el grado escolar asignado.</p>
+        </div>
+        <div class="kpi-card-3d" style="min-width: 180px; text-align: center;">
+          <span style="font-size: 0.8rem; text-transform: uppercase;">Matrícula del Grado</span>
+          <h3 id="totalAlumnosGrado" style="font-size: 2rem; margin-top: 5px;">0</h3>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel-card-3d" style="margin-top: 1.5rem;">
+      <h3>Asignaturas del Grado</h3>
+      <div id="contenedorMateriasOrientador" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem;">
+      </div>
+    </section>
+
+    <section class="panel-card-3d" style="margin-top: 1.5rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; wrap: flex-wrap; gap: 1rem;">
+        <h3>Estado de Alumnos y Calificaciones</h3>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <label>Filtrar por Asignatura:</label>
+          <select id="selectFiltroMateria" class="input-3d" onchange="renderizarTablaAlumnosMateria()" style="padding: 0.4rem;">
+            <option value="TODAS">Todas las Asignaturas</option>
+          </select>
+        </div>
+      </div>
+
+      <table class="table-3d" style="margin-top: 1rem; width: 100%;">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre del Alumno</th>
+            <th>Grupo</th>
+            <th>Asignatura</th>
+            <th>Calificación</th>
+            <th>Fecha</th>
+          </tr>
+        </thead>
+        <tbody id="tbodyAlumnosOrientador">
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="script_index.js"></script>
+  <script src="script_orientadores.js"></script>
+</body>
+</html>

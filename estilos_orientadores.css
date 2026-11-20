@@ -1,0 +1,29 @@
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
+body { background: #0b132b; color: #e0e1dd; min-height: 100vh; }
+
+.topbar-ori { background: #1c2541; padding: 1.25rem 2rem; border-bottom: 2px solid #7209b7; display: flex; justify-content: space-between; align-items: center; }
+.brand { font-size: 1.4rem; font-weight: 800; color: #7209b7; }
+.user-info-ori { display: flex; align-items: center; gap: 1rem; }
+
+.main-ori { max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem; }
+
+.banner-ori { background: linear-gradient(135deg, #1c2541, #0b132b); border: 1px solid #7209b7; border-radius: 12px; padding: 2rem; display: flex; justify-content: space-between; align-items: center; }
+.banner-info h2 { font-size: 1.8rem; color: #ffffff; }
+.banner-info p { color: #94a3b8; margin-top: 0.3rem; }
+
+.kpi-box-ori { background: #0b132b; border: 1px solid #7209b7; padding: 1rem 1.5rem; border-radius: 10px; text-align: center; }
+.kpi-box-ori span { font-size: 0.8rem; color: #94a3b8; }
+.kpi-box-ori p { font-size: 2rem; font-weight: 800; color: #ffffff; }
+
+.card-ori { background: #1c2541; border: 1px solid #3a506b; border-radius: 12px; padding: 1.8rem; }
+.card-ori h3 { color: #ffffff; margin-bottom: 1.25rem; }
+.margin-top { margin-top: 2rem; }
+
+.table-wrapper { overflow-x: auto; }
+.table-ori { width: 100%; border-collapse: collapse; }
+.table-ori th, .table-ori td { padding: 1rem; text-align: left; border-bottom: 1px solid #3a506b; }
+.table-ori th { background: #0b132b; color: #7209b7; }
+
+.btn-3d { padding: 0.5rem 1rem; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; }
+.btn-light { background: #475569; color: #ffffff; }
+.btn-sm { font-size: 0.85rem; }

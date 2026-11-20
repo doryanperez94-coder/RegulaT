@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RegulaT - Acceso Docente</title>
+  <link rel="stylesheet" href="estilos_index.css">
+  <link rel="stylesheet" href="estilos_logins.css">
+</head>
+<body class="body-login">
+
+  <div class="login-container-3d">
+    <div class="login-card-3d border-docente">
+      <div class="card-glow glow-docente"></div>
+      <div class="login-header">
+        <span class="logo-icon icon-teacher"></span>
+        <h2>Acceso de Personal Docente</h2>
+        <p>Selecciona tu grado escolar, asignatura asignada y contraseña</p>
+      </div>
+
+      <form id="formLoginDocentes" onsubmit="procesarLoginDocente(event)">
+        <div class="form-group-3d">
+          <label>Grado Escolar:</label>
+          <select id="selectGradoDocente" class="input-3d" onchange="filtrarMaestrosPorGrado()">
+            <option value="1°">1.º de Secundaria</option>
+            <option value="2°" selected>2.º de Secundaria</option>
+            <option value="3°">3.º de Secundaria</option>
+          </select>
+        </div>
+        <div class="form-group-3d">
+          <label>Maestro / Asignatura:</label>
+          <select id="selectMaestroObjeto" class="input-3d"></select>
+        </div>
+        <div class="form-group-3d">
+          <label>Contraseña:</label>
+          <input type="password" id="inputPassDocente" class="input-3d" placeholder="••••••••" required>
+        </div>
+        <div id="errorLoginDocente" class="error-badge" style="display:none;">Contraseña asignada incorrecta</div>
+        <button type="submit" class="btn-3d btn-dark btn-block">Ingresar al Panel de Materia</button>
+      </form>
+      <a href="index.html" class="link-volviendo">&larr; Volver al inicio</a>
+    </div>
+  </div>
+<script src="script_index.js"></script>
+<script src="script_logins.js"></script>
+</body>
+</body>
+</html>

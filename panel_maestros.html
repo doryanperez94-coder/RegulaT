@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RegulaT - Portal Docente</title>
+  <link rel="stylesheet" href="estilos_maestros.css">
+</head>
+<body>
+
+  <header class="topbar-docente">
+    <div class="brand">RegulaT - Control Docente</div>
+    <div class="user-info-doc">
+      <span id="labelNombreDocente">Maestro</span>
+      <button class="btn-3d btn-light btn-sm" onclick="cerrarSesionDocente()">Cerrar Sesión</button>
+    </div>
+  </header>
+
+  <main class="main-docente">
+    <section class="banner-docente">
+      <div class="banner-info">
+        <h2 id="tituloDocenteMateria">Materia Asignada</h2>
+        <p id="subtituloDocenteGrado">Grado Escolar</p>
+      </div>
+      <div class="kpi-mini-box">
+        <span>Alumnos Matriculados</span>
+        <p id="kpiCantAlumnosMateria">0</p>
+      </div>
+    </section>
+
+    <section class="card-docente margin-top">
+      <h3>Publicar Material Didáctico por Tema</h3>
+      <div class="form-row-docente">
+        <select id="selectTemaDocente" class="input-3d">
+          <option value="0">Tema 1</option>
+          <option value="1">Tema 2</option>
+          <option value="2">Tema 3</option>
+          <option value="3">Tema 4</option>
+          <option value="4">Tema 5</option>
+          <option value="5">Tema 6</option>
+          <option value="6">Tema 7</option>
+          <option value="7">Tema 8</option>
+          <option value="8">Tema 9</option>
+          <option value="9">Tema 10</option>
+          <option value="10">Tema 11</option>
+          <option value="11">Tema 12</option>
+        </select>
+        <select id="selectTipoRecurso" class="input-3d" onchange="toggleInputRecurso()">
+          <option value="enlace">Enlace Web</option>
+          <option value="imagen">Imagen (Archivo)</option>
+          <option value="pdf">Documento PDF (Archivo)</option>
+        </select>
+        <input type="text" id="inputTituloRecurso" class="input-3d" placeholder="Título del recurso">
+        <input type="url" id="inputUrlRecurso" class="input-3d" placeholder="https://ejemplo.com">
+        <input type="file" id="inputFileRecurso" class="input-3d" accept="image/*,application/pdf" style="display:none;">
+        <button class="btn-3d btn-primary" onclick="agregarRecursoDocente()">Publicar Recurso</button>
+      </div>
+      <div id="listaRecursosPublicados" class="margin-top"></div>
+    </section>
+
+    <section class="card-docente margin-top">
+      <h3>Alumnos del Grado en mi Asignatura</h3>
+      <div class="table-wrapper">
+        <table class="table-docente">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre del Alumno</th>
+              <th>Grado y Grupo</th>
+              <th>Calificación Registrada</th>
+              <th>Estatus</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+          <tbody id="tbodyAlumnosMateriaDocente"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card-docente margin-top">
+      <h3>Captura Directa de Calificación</h3>
+      <div class="form-row-docente">
+        <select id="selectAlumnoDocente" class="input-3d"></select>
+        <input type="number" id="inputCalificacionDocente" class="input-3d" min="0" max="10" step="0.1" placeholder="Calificación (0 - 10)">
+        <button class="btn-3d btn-primary" onclick="guardarCalificacionDocente()">Guardar Calificación</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script_maestros.js"></script>
+</body>
+</html>

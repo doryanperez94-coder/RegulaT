@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RegulaT - Acceso Dirección</title>
+  <link rel="stylesheet" href="estilos_index.css">
+  <link rel="stylesheet" href="estilos_logins.css">
+</head>
+<body class="body-login">
+
+  <div class="login-container-3d">
+    <div class="login-card-3d border-director">
+      <div class="card-glow glow-director"></div>
+      <div class="login-header">
+        <span class="logo-icon icon-director"></span>
+        <h2>Dirección General</h2>
+        <p>Control institucional y administración central del sistema</p>
+      </div>
+
+      <form id="formLoginDirector" onsubmit="procesarLoginDirector(event)">
+        <div class="form-group-3d">
+          <label>Clave Maestra Institucional:</label>
+          <input type="password" id="inputPassDirector" class="input-3d" placeholder="••••••••" required>
+        </div>
+        <div id="errorLoginDirector" class="error-badge" style="display:none;">Clave de Director General no válida</div>
+        <button type="submit" class="btn-3d btn-gold btn-block">Ingresar a Dirección General</button>
+      </form>
+      <a href="index.html" class="link-volviendo">&larr; Volver al inicio</a>
+    </div>
+  </div>
+
+  <script src="script_logins.js"></script>
+</body>
+</html>

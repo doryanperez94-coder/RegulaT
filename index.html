@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RegulaT - Sistema Institucional de Regularización</title>
+  <link rel="stylesheet" href="estilos_index.css">
+</head>
+<body>
+
+  <header class="topbar-3d">
+<div class="brand-logo">
+  <img src="regulat.png" alt="RegulaT Logo" style="width: 38px; height: 38px; object-fit: contain;">
+  <span class="brand-text">RegulaT</span>
+</div>
+    <nav class="nav-menu">
+      <a href="index.html" class="nav-link active">Inicio</a>
+      <a href="login_alumno.html" class="nav-link">Portal Alumnos</a>
+      <a href="login_docentes.html" class="nav-link">Portal Docentes</a>
+      <a href="login_orientadores.html" class="nav-link">Orientación Escolar</a>
+      <a href="login_director.html" class="nav-link highlight">Dirección General</a>
+    </nav>
+  </header>
+
+  <main class="main-wrapper">
+    <section class="hero-3d-card">
+      <div class="hero-graphic">
+  <img src="logo.png" alt="Educación en línea" style="width: 100%; max-width: 220px; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));">
+      </div>
+      <div class="hero-content">
+        <span class="badge-tag">Plataforma Académica Desde Cecytem</span>
+        <h1>Plataforma Web de Regularización Educativa</h1>
+        <p>Sistema integral para la administración de contenidos por grado escolar, acreditación de asignaturas, control por clase y auditoría institucional.</p>
+        <div class="hero-actions">
+          <a href="login_alumno.html" class="btn-3d btn-primary">Portal Alumnos</a>
+          <a href="login_docentes.html" class="btn-3d btn-dark">Portal Docentes</a>
+          <a href="login_orientadores.html" class="btn-3d btn-purple">Orientadores</a>
+          <a href="login_director.html" class="btn-3d btn-gold">Dirección General</a>
+        </div>
+      </div>
+      <div class="hero-graphic">
+        <div class="graphic-cube">
+          <div class="cube-face front">Aranza</div>
+          <div class="cube-face back">Dafne</div>
+          <div class="cube-face right">Valentina</div>
+          <div class="cube-face left">Fanny</div>
+          <div class="cube-face top">Liz</div>
+          <div class="cube-face bottom">Doryan</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="roles-portal-grid">
+      <div class="role-box-3d" onclick="window.location.href='login_alumno.html'">
+        <div class="role-header">
+          <span class="role-icon icon-student"></span>
+          <h3>Portal Estudiantes</h3>
+        </div>
+        <p>Acceso por credenciales de usuario. Módulos asignados por grado con lecciones y evaluaciones diagnósticas.</p>
+        <button class="btn-3d btn-block btn-primary">Iniciar Sesión Alumno</button>
+      </div>
+
+      <div class="role-box-3d" onclick="window.location.href='login_docentes.html'">
+        <div class="role-header">
+          <span class="role-icon icon-teacher"></span>
+          <h3>Portal Docentes</h3>
+        </div>
+        <p>Acceso restringido para maestros asignados a asignaturas específicas por grado de 1°, 2° y 3° de secundaria.</p>
+        <button class="btn-3d btn-block btn-dark">Iniciar Sesión Docente</button>
+      </div>
+
+      <div class="role-box-3d" onclick="window.location.href='login_orientadores.html'">
+        <div class="role-header">
+          <span class="role-icon icon-orientador"></span>
+          <h3>Paneles de Orientación</h3>
+        </div>
+        <p>Accesos independientes para Orientador de 1° Año, Orientador de 2° Año y Orientador de 3° Año.</p>
+        <button class="btn-3d btn-block btn-purple">Entrar a Orientación</button>
+      </div>
+
+      <div class="role-box-3d" onclick="window.location.href='login_director.html'">
+        <div class="role-header">
+          <span class="role-icon icon-director"></span>
+          <h3>Dirección General</h3>
+        </div>
+        <p>Validación mediante contraseña de clave maestra. Administración global de plantilla docente, matriculación y base de datos.</p>
+        <button class="btn-3d btn-block btn-gold">Entrar a Dirección</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-3d">
+    <p> RegulaT - Sistema Institucional de Regularización Académica.</p>
+  </footer>
+
+  <script src="script_index.js"></script>
+</body>
+</html>

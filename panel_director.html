@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RegulaT - Dirección General</title>
+  <link rel="stylesheet" href="estilos_director.css">
+</head>
+<body>
+
+  <header class="topbar-dir">
+    <div class="brand-dir">RegulaT - Panel del Director General</div>
+    <button class="btn-3d btn-light btn-sm" onclick="cerrarSesionDirector()">Cerrar Sesión</button>
+  </header>
+
+  <main class="main-dir">
+    <section class="nav-tabs-dir">
+      <button class="tab-btn active" onclick="cambiarTabDirector('maestros')">Plantilla Docente</button>
+      <button class="tab-btn" onclick="cambiarTabDirector('orientadores')">Plantilla Orientadores</button>
+      <button class="tab-btn" onclick="cambiarTabDirector('alumnos')">Matriculación de Alumnos</button>
+      <button class="tab-btn" onclick="cambiarTabDirector('bd')">Base de Datos Global</button>
+    </section>
+
+    <section id="tabMaestros" class="card-dir margin-top">
+      <h3>Control de Personal Docente por Grado y Asignatura</h3>
+      <div class="table-wrapper">
+        <table class="table-dir">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre del Maestro</th>
+              <th>Grado Escolar</th>
+              <th>Asignatura</th>
+              <th>Contraseña</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+          <tbody id="tbodyMaestrosDirector"></tbody>
+        </table>
+      </div>
+
+      <h4 class="sub-title margin-top">Agregar Docente a la Plantilla</h4>
+      <div class="form-grid-dir">
+        <input type="text" id="addMaestroNombre" class="input-3d" placeholder="Nombre completo">
+        <select id="addMaestroGrado" class="input-3d" onchange="actualizarAsignaturasFormDirector()">
+          <option value="1°">1.º de Secundaria</option>
+          <option value="2°">2.º de Secundaria</option>
+          <option value="3°">3.º de Secundaria</option>
+        </select>
+        <select id="addMaestroMateria" class="input-3d"></select>
+        <input type="text" id="addMaestroPass" class="input-3d" placeholder="Contraseña asignada">
+        <button class="btn-3d btn-gold" onclick="agregarMaestroDirector()">Guardar Maestro</button>
+      </div>
+    </section>
+
+    <section id="tabOrientadores" class="card-dir margin-top" style="display:none;">
+      <h3>Control de Personal Orientador por Grado</h3>
+      <div class="table-wrapper">
+        <table class="table-dir">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre del Orientador</th>
+              <th>Grado Escolar</th>
+              <th>Contraseña</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+          <tbody id="tbodyOrientadoresDirector"></tbody>
+        </table>
+      </div>
+
+      <h4 class="sub-title margin-top">Agregar Orientador a la Plantilla</h4>
+      <div class="form-grid-dir">
+        <input type="text" id="addOrientadorNombre" class="input-3d" placeholder="Nombre completo">
+        <select id="addOrientadorGrado" class="input-3d">
+          <option value="1°">1.º de Secundaria</option>
+          <option value="2°">2.º de Secundaria</option>
+          <option value="3°">3.º de Secundaria</option>
+        </select>
+        <input type="text" id="addOrientadorPass" class="input-3d" placeholder="Contraseña asignada">
+        <button class="btn-3d btn-gold" onclick="agregarOrientadorDirector()">Guardar Orientador</button>
+      </div>
+    </section>
+
+    <section id="tabAlumnos" class="card-dir margin-top" style="display:none;">
+      <h3>Matriculación General de Alumnos</h3>
+      <div class="table-wrapper">
+        <table class="table-dir">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre del Alumno</th>
+              <th>Usuario</th>
+              <th>Contraseña</th>
+              <th>Grado y Grupo</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+          <tbody id="tbodyAlumnosDirector"></tbody>
+        </table>
+      </div>
+
+      <h4 class="sub-title margin-top">Matricular Nuevo Estudiante</h4>
+      <div class="form-grid-dir">
+        <input type="text" id="addAlumnoNombre" class="input-3d" placeholder="Nombre completo">
+        <input type="text" id="addAlumnoUser" class="input-3d" placeholder="Usuario">
+        <input type="text" id="addAlumnoPass" class="input-3d" placeholder="Contraseña">
+        <select id="addAlumnoGrado" class="input-3d">
+          <option value="1°">1.º de Secundaria</option>
+          <option value="2°">2.º de Secundaria</option>
+          <option value="3°">3.º de Secundaria</option>
+        </select>
+        <select id="addAlumnoGrupo" class="input-3d">
+          <option value="A">Grupo A</option>
+          <option value="B">Grupo B</option>
+          <option value="C">Grupo C</option>
+        </select>
+        <button class="btn-3d btn-primary" onclick="agregarAlumnoDirector()">Matricular Alumno</button>
+      </div>
+    </section>
+
+    <section id="tabBD" class="card-dir margin-top" style="display:none;">
+      <h3>Base de Datos de Calificaciones</h3>
+      <div class="table-wrapper">
+        <table class="table-dir">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Alumno</th>
+              <th>Grado</th>
+              <th>Materia</th>
+              <th>Calificación</th>
+              <th>Fecha</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+          <tbody id="tbodyBDDirector"></tbody>
+        </table>
+      </div>
+      <div class="margin-top">
+        <button class="btn-3d btn-red" onclick="vaciarBDDirector()">Vaciar Base de Datos</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script_director.js"></script>
+</body>
+</html>

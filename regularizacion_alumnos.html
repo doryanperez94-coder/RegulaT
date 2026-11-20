@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RegulaT - Portal del Alumno</title>
+  <link rel="stylesheet" href="estilos_alumnos.css">
+</head>
+<body>
+
+  <div class="layout-3d">
+    <aside class="sidebar-3d">
+      <div class="sidebar-brand">
+        RegulaT
+      </div>
+      <nav class="sidebar-menu">
+        <a href="#" class="side-link active" id="navMaterias" onclick="cambiarSeccion('materias'); return false;">Mis Asignaturas</a>
+        <a href="#" class="side-link" id="navHistorial" onclick="cambiarSeccion('historial'); return false;">Mi Historial</a>
+        <a href="#" class="side-link logout" onclick="cerrarSesionAlumno(); return false;">Cerrar Sesión</a>
+      </nav>
+      <div class="user-card-mini">
+        <div class="user-text">
+          <p id="labelNombreAlumnoSidebar">Alumno Regular</p>
+          <span id="labelGradoAlumnoSidebar">Grado Activo</span>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-body">
+      <header class="topbar-alumnos">
+        <h2>Panel de Regularización Estudiantil</h2>
+        <div class="badge-grado" id="badgeGradoTop">Grado</div>
+      </header>
+
+      <div class="content-container">
+        
+        <div id="vistaMaterias" class="view-section">
+          <div class="section-title-box">
+            <h3>Asignaturas Correspondientes a tu Grado Escolar</h3>
+            <p>Selecciona una materia para explorar sus 12 temas, explicaciones, ejemplos, videos, archivos del maestro y mini examen.</p>
+          </div>
+
+          <div id="gridMateriasGraduadas" class="grid-cards-3d"></div>
+
+          <div id="panelTemasMateria" class="card-detail-3d" style="display:none; margin-top:2rem;">
+            <button type="button" class="btn-back" onclick="cerrarListaTemas()">&larr; Volver a lista de materias</button>
+            <div class="modulo-header">
+              <span id="tagMateriaTemas" class="badge-materia">Asignatura</span>
+              <h2>Temario Completo (12 Temas)</h2>
+            </div>
+            <div id="gridTemasMateria" class="grid-cards-3d"></div>
+          </div>
+
+          <div id="panelExamenModulo" class="card-detail-3d" style="display:none; margin-top:2rem;">
+            <button type="button" class="btn-back" onclick="cerrarModuloEstudio()">&larr; Volver a los 12 temas</button>
+            <div class="modulo-header">
+              <span id="tagMateriaNombre" class="badge-materia">Asignatura</span>
+              <h2 id="tituloModuloEstudio">Título del Tema</h2>
+            </div>
+            
+            <div class="split-study-layout" style="display:block;">
+              <div class="reading-box" style="margin-bottom:2rem;">
+                <h4>8 Explicaciones del Tema</h4>
+                <div id="contenedorExplicaciones" class="reading-text"></div>
+
+                <hr style="margin:1.5rem 0;">
+
+                <h4>4 Ejemplos Prácticos</h4>
+                <div id="contenedorEjemplos" class="reading-text"></div>
+
+                <hr style="margin:1.5rem 0;">
+
+                <h4>10 Videos de Apoyo (YouTube)</h4>
+                <div id="contenedorVideos" class="reading-text"></div>
+
+                <hr style="margin:1.5rem 0;">
+
+                <h4>Material Adjunto por el Docente (Imágenes, PDF, Enlaces)</h4>
+                <div id="contenedorRecursosDocente" class="reading-text"></div>
+              </div>
+
+              <div class="quiz-box">
+                <h4>Mini Examen del Tema (5 Reactivos)</h4>
+                <div id="contenedorPreguntasQuiz"></div>
+                <button type="button" class="btn-3d btn-primary btn-block" onclick="evaluarQuizAlumno()">Calificar Mini Examen</button>
+                <div id="resultadoMiniExamen" style="margin-top:1rem; font-weight:bold; font-size:1.1rem;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="vistaHistorial" class="view-section" style="display:none;">
+          <div class="section-title-box">
+            <h3>Historial de Calificaciones</h3>
+            <p>Registro persistente de tus resultados obtenidos por asignatura y tema.</p>
+          </div>
+
+          <div class="kpi-row-3d">
+            <div class="kpi-box">
+              <span>Promedio General</span>
+              <p id="kpiPromedioAlumno">0.0</p>
+            </div>
+            <div class="kpi-box">
+              <span>Mini Exámenes Presentados</span>
+              <p id="kpiExamenesCount">0</p>
+            </div>
+          </div>
+
+          <div class="card-table-3d">
+            <table class="table-3d">
+              <thead>
+                <tr>
+                  <th>Asignatura y Tema</th>
+                  <th>Calificación</th>
+                  <th>Estatus</th>
+                  <th>Fecha</th>
+                </tr>
+              </thead>
+              <tbody id="tbodyHistorialAlumno"></tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="script_alumnos.js"></script>
+</body>
+</html>

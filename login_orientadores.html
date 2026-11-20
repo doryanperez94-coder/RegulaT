@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RegulaT - Acceso Orientadores</title>
+  <link rel="stylesheet" href="estilos_index.css">
+  <link rel="stylesheet" href="estilos_logins.css">
+</head>
+<body class="body-login">
+
+  <div class="login-container-3d">
+    <div class="login-card-3d border-orientador">
+      <div class="card-glow glow-orientador"></div>
+      <div class="login-header">
+        <span class="logo-icon icon-orientador"></span>
+        <h2>Acceso de Orientadores Escolares</h2>
+        <p>Selecciona tu grado asignado e ingresa tu contraseña institucional</p>
+      </div>
+
+      <form id="formLoginOrientador" onsubmit="procesarLoginOrientador(event)">
+        <div class="form-group-3d">
+          <label>Grado Escolar Asignado:</label>
+          <select id="selectGradoOrientador" class="input-3d">
+            <option value="1°">1.º de Secundaria (Profa. Nancy)</option>
+            <option value="2°">2.º de Secundaria (Profa. Anele)</option>
+            <option value="3°">3.º de Secundaria (Prof. Genaro Reyes)</option>
+          </select>
+        </div>
+        <div class="form-group-3d">
+          <label>Contraseña:</label>
+          <input type="password" id="inputPassOrientador" class="input-3d" placeholder="••••••••" required>
+        </div>
+        <div id="errorLoginOrientador" class="error-badge" style="display:none;">Contraseña de orientador incorrecta</div>
+        <button type="submit" class="btn-3d btn-dark btn-block">Ingresar al Panel de Orientación</button>
+      </form>
+
+      <a href="index.html" class="link-volviendo">&larr; Volver al inicio</a>
+    </div>
+  </div>
+
+  <script src="script_index.js"></script>
+  <script src="script_logins.js"></script>
+</body>
+</html>
